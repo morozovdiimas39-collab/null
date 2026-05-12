@@ -133,23 +133,36 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
   text-transform: uppercase;
 }
 .hero-title { 
-  font-size: clamp(2rem, 10vw, 5.5rem); 
+  font-size: 5.5rem; 
   line-height: 1; 
-  margin-bottom: 2rem; 
   font-weight: 900; 
   letter-spacing: -0.04em; 
   text-transform: uppercase; 
-  word-break: break-word;
-  hyphens: auto;
+}
+
+@media (max-width: 1200px) {
+  .hero-title { font-size: 4rem; }
+}
+
+@media (max-width: 768px) {
+  .hero-title { 
+    font-size: 2.2rem; 
+    line-height: 1.1; 
+    word-break: break-word;
+  }
+  .hero-title br { display: none; }
 }
 
 .hero-sub { 
-  font-size: clamp(1rem, 4vw, 1.25rem); 
-  color: rgba(255, 255, 255, 0.5); 
-  max-width: 600px; 
   line-height: 1.6; 
-  margin-bottom: 3.5rem; 
-  font-weight: 500; 
+}
+
+@media (max-width: 768px) {
+  .hero-sub { 
+    font-size: 1rem !important; 
+    margin-bottom: 2.5rem !important; 
+    line-height: 1.4 !important;
+  }
 }
 
 .hero-btns { 

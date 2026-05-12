@@ -12,12 +12,12 @@ export default function Hero() {
       <div className="hero-overlay"></div>
 
       <div className="wrap hero-content">
-        <h1 className="hero-title">
-          AI ВИДЕОСТУДИЯ 
+        <h1 className="hero-title" style={{ marginBottom: '2rem' }}>
+          AI ВИДЕОСТУДИЯ <br/>
           <span className="text-primary">NULL</span> — КОНТЕНТ НОВОГО ПОКОЛЕНИЯ
         </h1>
 
-        <p className="hero-sub">
+        <p style={{ color: 'var(--text-muted)', fontSize: '1.15rem', maxWidth: '600px', lineHeight: '1.7', marginBottom: '3.5rem' }}>
           Создаем ИИ видео, которые вызывают эмоции. Делаем рекламу, клипы, фильмы и ролики от концепции до финального монтажа с помощью нейросетей.
         </p>
 
