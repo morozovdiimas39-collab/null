@@ -153,11 +153,13 @@ export default function Manifesto() {
 
         <div className="manifesto-video-wrapper">
           <video 
-            src="https://aistudionull.ru/wp-content/uploads/2025/11/1_showreel-2025_montaj.mp4"
+            src="https://aistudionull.ru/wp-content/uploads/2026/02/1-manifest-comp-8mb.mp4"
             autoPlay 
             loop 
             muted 
             playsInline
+            webkit-playsinline="true"
+            preload="auto"
             className="manifesto-video"
           />
         </div>
