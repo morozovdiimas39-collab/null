@@ -1,14 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;600;800&display=swap');
 
 :root {
-  --bg: #0f1117;
-  --primary: #3b82f6;
-  --primary-soft: rgba(59, 130, 246, 0.1);
-  --text-main: #ffffff;
-  --text-muted: #94a3b8;
-  --surface: rgba(30, 41, 59, 0.5);
+  --primary: #60a5fa;
+  --primary-glow: rgba(96, 165, 250, 0.3);
+  --bg: #050609;
+  --bg-offset: #0d0f14;
+  --text: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.4);
   --border: rgba(255, 255, 255, 0.08);
-  --accent: #60a5fa;
+  --nav-bg: rgba(5, 6, 9, 0.8);
+  --font-main: 'Inter', sans-serif;
+  --font-heading: 'Outfit', sans-serif;
 }
 
 *, *::before, *::after {
@@ -18,10 +20,10 @@
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-main);
   background-color: var(--bg);
-  color: var(--text-main);
-  line-height: 1.5;
+  color: var(--text);
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
@@ -80,8 +82,28 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
 }
 
 /* LAYOUT */
-.wrap { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; }
-.section { padding: 8rem 0; }
+.wrap { 
+  width: 100%; 
+  max-width: 1440px; 
+  margin: 0 auto; 
+  padding: 0 4rem; 
+}
+
+@media (max-width: 1024px) {
+  .wrap { padding: 0 2.5rem; }
+}
+
+@media (max-width: 768px) {
+  .wrap { padding: 0 1.5rem; }
+}
+
+.section { 
+  padding: 8rem 0; 
+}
+
+@media (max-width: 768px) {
+  .section { padding: 5rem 0; }
+}
 
 /* NAV */
 .nav {
@@ -110,10 +132,35 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
   font-size: 0.8rem; font-weight: 700; color: var(--primary); letter-spacing: 0.1em; margin-bottom: 1.5rem;
   text-transform: uppercase;
 }
-.hero-title { font-size: clamp(2.5rem, 8vw, 4.5rem); line-height: 1; margin-bottom: 1.5rem; font-weight: 900; letter-spacing: -0.02em; text-transform: uppercase; }
-.hero-sub { font-size: 1.5rem; color: #fff; max-width: 800px; line-height: 1.4; margin-bottom: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
-.hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 4rem; }
-.hero-stats { display: flex; gap: 4rem; }
+.hero-title { 
+  font-size: clamp(2.5rem, 12vw, 5.5rem); 
+  line-height: 0.95; 
+  margin-bottom: 2rem; 
+  font-weight: 900; 
+  letter-spacing: -0.04em; 
+  text-transform: uppercase; 
+}
+
+.hero-sub { 
+  font-size: clamp(1rem, 4vw, 1.4rem); 
+  color: rgba(255, 255, 255, 0.7); 
+  max-width: 600px; 
+  line-height: 1.4; 
+  margin-bottom: 2.5rem; 
+  font-weight: 500; 
+}
+
+.hero-btns { 
+  display: flex; 
+  gap: 1rem; 
+  flex-wrap: wrap; 
+  margin-bottom: 4rem; 
+}
+
+@media (max-width: 768px) {
+  .hero-btns .btn { width: 100%; }
+  .hero-stats { grid-template-columns: 1fr; gap: 2rem; }
+}
 .stat-num { font-size: 2.5rem; font-weight: 800; font-family: 'Outfit', sans-serif; color: #fff; }
 .stat-label { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem; text-transform: uppercase; font-weight: 600; letter-spacing: 0.05em; }
 
@@ -161,10 +208,12 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
 
 @media (max-width: 768px) {
   .service-row { flex-direction: column; align-items: flex-start; gap: 1.5rem; padding: 2rem 0; }
-  .service-row-left { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
-  .service-row-right { flex-direction: column; align-items: flex-start; gap: 1.5rem; width: 100%; }
-  .service-row-title { font-size: 1.8rem; }
-  .service-row-desc { max-width: 100%; }
+  .service-row-left { flex-direction: row; align-items: center; gap: 1.5rem; }
+  .service-row-img { width: 60px; height: 60px; }
+  .service-row-title { font-size: 1.5rem; }
+  .service-row-right { flex-direction: row; justify-content: space-between; align-items: center; width: 100%; }
+  .service-row-desc { font-size: 0.95rem; max-width: 80%; }
+  .service-row-arrow { transform: scale(0.8); }
 }
 
 /* MANIFESTO EDITORIAL */

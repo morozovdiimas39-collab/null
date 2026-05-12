@@ -214,8 +214,9 @@ export default function Cta() {
 
         @media (max-width: 1024px) {
           .cta-v5-container { grid-template-columns: 1fr; gap: 4rem; }
-          .cta-v5-visual-side { padding-left: 0; align-items: flex-start; }
-          .cta-v5-orb-wrap { display: none; }
+          .cta-v5-visual-side { padding-left: 0; align-items: center; }
+          .cta-v5-logo-visual { width: 180px; }
+          .cta-v5-orb-wrap { width: 220px; height: 220px; margin-bottom: 0; }
         }
 
         @media (max-width: 768px) {

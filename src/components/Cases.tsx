@@ -337,10 +337,13 @@ export default function Cases() {
           transform: translateY(-3px);
         }
 
-        @media (max-width: 1200px) {
-          .cases-v4-container { grid-template-columns: 1fr; }
-          .cases-v4-sticky { position: relative; top: 0; margin-bottom: 4rem; }
-          .cases-v4-grid { gap: 8rem; }
+        @media (max-width: 1024px) {
+          .cases-v4-container { grid-template-columns: 1fr; gap: 4rem; }
+          .cases-v4-sticky { position: relative; top: 0; margin-bottom: 2rem; }
+          .cases-v4-grid { gap: 6rem; }
+          .cases-v4-visual { margin-bottom: 1.5rem; }
+          .cases-v4-card-title { font-size: 2rem; }
+          .cases-v4-desc { font-size: 1rem; }
         }
       `}</style>
 

@@ -39,26 +39,63 @@ export default function Navbar() {
       </button>
 
       {isOpen && (
-        <div style={{ 
-          position: 'absolute', top: '80px', left: 0, right: 0, 
-          background: 'var(--bg)', borderBottom: '1px solid var(--border)', 
-          padding: '2rem', display: 'flex', flexDirection: 'column', gap: '1.5rem', 
-          backdropFilter: 'blur(20px)' 
-        }}>
-          <a href="#services" onClick={() => setIsOpen(false)}>УСЛУГИ</a>
-          <a href="#cases" onClick={() => setIsOpen(false)}>КЕЙСЫ</a>
-          <a href="#about" onClick={() => setIsOpen(false)}>О НАС</a>
-          <a href="#contacts" onClick={() => setIsOpen(false)}>КОНТАКТЫ</a>
-          <a href="https://t.me/AI_studio_null" target="_blank" rel="noreferrer" className="btn btn-glow">
-            ОБСУДИТЬ ПРОЕКТ
-          </a>
+        <div className="mobile-overlay">
+          <div className="mobile-menu">
+            <Link to="/#services" onClick={() => setIsOpen(false)}>УСЛУГИ</Link>
+            <Link to="/#cases" onClick={() => setIsOpen(false)}>КЕЙСЫ</Link>
+            <Link to="/#about" onClick={() => setIsOpen(false)}>О НАС</Link>
+            <Link to="/#contact" onClick={() => setIsOpen(false)}>КОНТАКТЫ</Link>
+            <a href="https://t.me/AI_studio_null" target="_blank" rel="noreferrer" className="btn btn-glow" style={{ width: '100%', marginTop: '2rem' }}>
+              ОБСУДИТЬ ПРОЕКТ
+            </a>
+          </div>
         </div>
       )}
 
       <style>{`
+        .mobile-overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100vh;
+          background: rgba(5, 6, 9, 0.98);
+          backdrop-filter: blur(20px);
+          z-index: 99;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          animation: fadeIn 0.3s ease;
+        }
+
+        .mobile-menu {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 2.5rem;
+          width: 100%;
+          padding: 0 2rem;
+        }
+
+        .mobile-menu a {
+          font-family: 'Outfit', sans-serif;
+          font-size: 2rem;
+          font-weight: 800;
+          color: #fff;
+          text-decoration: none;
+          text-transform: uppercase;
+          letter-spacing: -0.02em;
+        }
+
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(-10px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+
         @media (max-width: 768px) {
+          .nav { padding: 0 1.5rem; }
           .nav-links, .nav-cta { display: none !important; }
-          .mobile-menu-btn { display: block !important; }
+          .mobile-menu-btn { display: block !important; position: relative; z-index: 100; }
         }
         @media (min-width: 769px) {
           .mobile-menu-btn { display: none !important; }

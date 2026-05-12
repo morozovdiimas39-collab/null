@@ -142,9 +142,14 @@ export default function ServicePage() {
         }
 
         @media (max-width: 1024px) {
-          .service-page-grid { grid-template-columns: 1fr; gap: 4rem; }
-          .service-page-features { grid-template-columns: 1fr; }
-          .service-page-cta { padding: 4rem 2rem; }
+          .service-page { padding-top: 8rem; }
+          .service-page-title { font-size: 4rem; }
+          .service-page-grid { grid-template-columns: 1fr; gap: 3rem; }
+          .service-page-features { grid-template-columns: 1fr; gap: 1.5rem; }
+          .service-page-cta { padding: 4rem 2rem; border-radius: 32px; }
+          .service-page-cta-title { font-size: 2.2rem; }
+          .service-page-btn { width: 100%; justify-content: center; padding: 1.25rem 2rem; font-size: 1rem; }
+          .service-page-desc { font-size: 1.2rem; margin-bottom: 3rem; }
         }
       `}</style>
 
