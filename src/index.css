@@ -165,9 +165,11 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
 
 @media (max-width: 768px) {
   .hero-title { 
-    font-size: 2.8rem !important; 
-    line-height: 1.1 !important; 
+    font-size: 2.2rem !important; 
+    line-height: 1.15 !important; 
     word-break: break-word !important;
+    letter-spacing: -0.02em !important;
+    margin-bottom: 2.5rem !important;
   }
   .hero-title br { display: none !important; }
 }
