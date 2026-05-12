@@ -133,10 +133,10 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
   text-transform: uppercase;
 }
 .hero-title { 
-  font-size: 5.5rem; 
+  font-size: clamp(2.5rem, 8vw, 4.5rem); 
   line-height: 1; 
   font-weight: 900; 
-  letter-spacing: -0.04em; 
+  letter-spacing: -0.02em; 
   text-transform: uppercase; 
 }
 
@@ -146,11 +146,11 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
 
 @media (max-width: 768px) {
   .hero-title { 
-    font-size: 2.2rem; 
-    line-height: 1.1; 
-    word-break: break-word;
+    font-size: 1.8rem !important; 
+    line-height: 1.1 !important; 
+    word-break: break-word !important;
   }
-  .hero-title br { display: none; }
+  .hero-title br { display: none !important; }
 }
 
 .hero-sub { 
