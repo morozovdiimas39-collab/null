@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { ArrowUpRight, Play } from 'lucide-react';
 
 const CASES = [
